@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{servico.nome_servico}}</title>
+
+    <link rel="stylesheet" href="../static/info.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="barra">
+        <div class="logo-barueri">
+                    <a href="/" aria-label="Voltar para a página inicial">
+            <img src="../static/img/logo-barueri.png">
+            </a>
+        </div>
+    </div>
+
+
+    <section>
+
+        <div class="nav-mobile-topo">
+
+            <div>
+                <a href="javascript:history.back()"><span class="material-symbols-outlined barra-icon">
+                        chevron_left
+                    </span></a>
+            </div>
+
+            <!-- Esse botão é oculto no desktop -->
+            <div class="botao-adicionar-desk">
+                <a href="/adicionais/{{ servico.id_servico }}"><span class="material-symbols-outlined barra-icon">
+                        chevron_right
+                    </span></a>
+            </div>
+
+            <div>
+                <a href="/"><span class="material-symbols-outlined barra-icon">
+                        home
+                    </span></a>
+            </div>
+
+        </div>
+
+
+        <section class="pai">
+            <section class="lado-esquerdo-desk">
+
+                <div class="bloco-1">
+
+                    <h1>{{servico.nome_servico}}</h1>
+
+                    <!-- Presencial + Agendamento -->
+                    <div class="info-1">
+                        <p class="text-icon"> <i class="fa-solid fa-location-dot"></i> {{servico.tipo_atendimento}}</p>
+                        <p class="text-icon"> <i class="fa-regular fa-calendar"></i> {% if servico.permite_agendamento == "Sim" %} Agendamento Obrigatório {% else %} Não é necessário agendamento {% endif %}</p>
+                    </div>
+
+                    <div class="info-1">
+                        <p class="text-icon"> <i class="fa-solid fa-money-bill-1-wave"></i> Preço: {{servico.valor}} </p>
+                    </div>
+
+                    <div class="acesso-servico">
+                        <button class="botao-acesso">
+                            <span class="material-symbols-outlined">
+                                link </span>
+                            <a href="{{servico.link_acesso}}"> Acesse o portal </a>
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="bloco-2">
+                    <h2>Sobre o serviço</h2><p>{{servico.descricao}}</p>
+
+                    <h2>Local e Horários</h2>
+
+                    <div class="bloco-3">
+                        <div>
+                            <p> <i class="fa-solid fa-location-dot"></i> {{servico.local_atendimento}}</p>
+                        </div>
+
+                        <div>
+                            <p> <i class="fa-solid fa-clock"></i> {{servico.horario_atendimento}}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="info-oculta-desk">
+
+                <div>
+                    <button>
+                        <a href="/adicionais/{{ servico.id_servico }}">Informações Adicionais </a> 
+                        <span class="material-symbols-outlined">arrow_forward</span> 
+                    </button>
+                </div>
+
+                <div class="nav-mobile">
+
+                    <div>
+                        <a href="javascript:history.back()"><span class="material-symbols-outlined barra-icon">
+                                chevron_left
+                            </span></a>
+                    </div>
+
+                    <div>
+                        <a href="/"><span class="material-symbols-outlined barra-icon">
+                                home
+                            </span></a>
+                    </div>
+
+                    <div>
+                        <a href="/adicionais/{{ servico.id_servico }}"><span class="material-symbols-outlined barra-icon">
+                                chevron_right
+                            </span></a>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="lado-direito-desk">
+
+                <div>
+                    <h2>Quem utiliza esse serviço?</h2>
+                    <p>{{servico.quem_utiliza}}</p>
+
+                    <h2>Passo a Passo</h2>
+                    <p>{{servico.passo_a_passo}}</p>
+                </div>
+
+            </section>
+        </section>
+
+    </section>
+
+</body>
+
+</html>

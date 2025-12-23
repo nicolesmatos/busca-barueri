@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações</title>
+
+
+
+    <!-- Acessos ao CSS -->
+    <link rel="stylesheet" href="../static/info.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <!-- Corpo da página -->
+    <section>
+
+        <!--Imagem da logo de Barueri-->
+        <div class="logo-barueri">
+            <img src="../static/img/logo-barueri.png">
+        </div>
+
+        <!-- Título + informações rápidas do topo -->
+
+        <div class="bloco-1">
+
+            <!-- Título -->
+            <h1>{{servico.nome_servico}}</h1>
+
+            <!-- Link de acesso ao serviço -->
+            <div class="acesso-servico">
+                <button>
+
+                    <span class="material-symbols-outlined">
+                        link </span>
+                    <a href="{{servico.link_acesso}}"> Acesse o portal</a>
+
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- Informações principais- bloco geral -->
+
+        <div>
+
+            <!-- Sobre o serviço -->
+            <h2>Quem utiliza esse serviço?</h2><!--Título-->
+
+            <p>{{servico.quem_utiliza}}
+            </p>
+
+            <!-- Sobre o serviço -->
+            <h2>Passo a Passo</h2><!--Título-->
+
+            <p>{{servico.passo_a_passo}}
+            </p>
+
+        
+
+        </div>
+
+        <!-- Botões de voltar -->
+
+        <div class="nav-mobile inferior-nav">
+
+            <!-- Ícones diversos -->
+            <div>
+
+                <a href="javascript:history.back()"><span class="material-symbols-outlined barra-icon">
+                        chevron_left
+                    </span></a>
+            </div>
+
+            <div>
+
+                <a href="./"><span class="material-symbols-outlined barra-icon">
+                        home
+                    </span></a>
+            </div>
+
+            <div>
+
+                <a href="#"><span class="material-symbols-outlined barra-icon">
+                        chevron_right
+                    </span>"></a>
+            </div>
+
+        </div>
+
+
+
+
+    </section>
+
+</body>
+
+</html>

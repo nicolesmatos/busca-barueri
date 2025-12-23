@@ -1,0 +1,190 @@
+:root{
+  --bg:#ffffff;
+  --muted:#6b7280;
+  --accent:#2DAAE1;
+  --soft:#f6f9fb;
+  --card-border:#e6eef6;
+  font-family: "Roboto", sans-serif;
+}
+
+/* reset box-sizing */
+*{ box-sizing:border-box; }
+html,body{
+  height:100%;
+  margin:0;
+  background:#fff;
+  color:#111827;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+}
+
+/* ======== LAYOUT GOOGLE-LIKE ======== */
+body{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding-top:300px;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Header com logo e slogan */
+.top-header-centered{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  margin-bottom:28px;
+}
+
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.brand-logo{
+  height:100%;
+  width:100%;
+}
+
+.slogan{
+  margin:0;
+  color:var(--muted);
+  font-size:16px;
+  text-align:center;
+}
+
+/* ======== SEARCH BOX ======== */
+
+.center-wrap{
+  width:100%;
+  max-width:760px;
+  display:flex;
+  justify-content:center;
+}
+
+.search-form{
+  position:relative;
+  width:100%;
+}
+
+/* Remove o X nativo do Chrome/WebKit e ajustes cross-browser */
+.search-input::-webkit-search-decoration,
+.search-input::-webkit-search-cancel-button,
+.search-input::-webkit-search-results-button,
+.search-input::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+.search-input::-ms-clear {
+  display: none;
+}
+
+.search-input {
+  -webkit-appearance: none; /* remove decoração nativa */
+  appearance: none;
+  width:100%;
+  padding:14px 92px 14px 46px; /* espaço para ícones à direita */
+  border-radius:999px;
+  border:1px solid var(--card-border);
+  font-size:16px;
+  background:#fff;
+  box-shadow:0 2px 6px rgba(0,0,0,0.12);
+  outline:none;
+}
+
+/* ícone esquerda */
+.search-icon{
+  position:absolute;
+  left:16px;
+  top:50%;
+  transform:translateY(-50%);
+  color:#70757a;
+  font-size:20px;
+  pointer-events:none;
+}
+
+/* botão padrão compartilhado */
+.icon-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  height:40px;
+  width:40px;
+  border:none;
+  border-radius:999px;
+  background:#FFF;
+  color:var(--muted);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  padding:0;
+}
+
+/* botão buscar (mais à direita) */
+.search-btn{
+  right:8px;
+}
+
+/* botão limpar (aparece antes do botão buscar) */
+.clear-btn{
+  right:56px; /* posicionado entre o campo e o botão buscar */
+}
+
+/* Quando input possui texto, adicionamos uma classe ao form (por JS) para efeitos visuais se quiser */
+.search-form.has-value .clear-btn{
+  display:flex;
+}
+
+/* Sugestões (mantive seu estilo) */
+.suggestions{
+  position:absolute;
+  left:0;
+  right:0;
+  top:calc(100% + 10px);
+  background:#fff;
+  border-radius:10px;
+  border:1px solid #eef2f7;
+  box-shadow:0 18px 50px rgba(18,24,40,0.08);
+  overflow:hidden;
+  max-height:0;
+  opacity:0;
+  transform:scaleY(0.98) translateY(-6px);
+  transform-origin:top center;
+  transition:max-height .25s ease, opacity .2s ease, transform .2s ease;
+  z-index:1500;
+}
+
+.suggestions.open{
+  max-height:420px;
+  opacity:1;
+  transform:scaleY(1) translateY(0);
+}
+
+.suggestion{
+  padding:10px 12px;
+  display:flex;
+  gap:12px;
+  cursor:pointer;
+}
+
+.suggestion:hover{
+  background:#2DAAE130;
+}
+
+.sugg-icon{
+  color:#70757a;
+  font-size:18px;
+}
+
+/* responsivo */
+@media(max-width:720px){
+  body{ padding-top:300px; }
+  .brand-logo{ height:70px; }
+  .center-wrap{ padding:0 12px; }
+  .search-input{ font-size:15px; padding:12px 80px 12px 44px; }
+  .clear-btn{ right:68px; }
+}

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resultados - Busca Barueri</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+
+  <link rel="stylesheet" href="../static/style-results.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="page-results">
+
+  <header class="top-header" role="banner">
+    <div class="header-inner" role="navigation" aria-label="Topo">
+      <div class="header-left">
+        <a href="/" aria-label="Voltar para a página inicial">
+          <img src="../static/img/logo_site (1).png" alt="Barueri" class="brand-logo-small" />
+        </a>
+      </div>
+
+      <div class="header-center" aria-hidden="false">
+        
+        <form id="searchForm" class="search-form topbar" role="search" onsubmit="return false;">
+
+          <span class="material-icons-outlined search-icon" aria-hidden="true">search</span>
+          
+          <input id="busca" class="topbar-input" type="search" placeholder="Pesquisar..." autocomplete="off"
+            aria-label="Pesquisar" />
+
+          <div id="sugestoes" class="autocomplete-box" aria-hidden="true"></div>
+
+        </form>
+      </div>
+
+      <div class="header-right-placeholder" style="flex: 0 0 16px;"></div>
+    </div>
+  </header>
+
+  <main class="results-container" role="main">
+    <div class="results-column">
+
+      {% if servicos %}
+      <div id="searchMeta" class="search-meta" aria-live="polite">
+        {{ servicos|length }} resultados encontrados
+      </div>
+
+      <div id="resultsList" class="results" aria-live="polite">
+        {% for servico in servicos %}
+        <div class="result-item">
+          <a href="/detalhe/{{ servico.id_servico }}" class="title-link">
+            {{ servico.nome_servico }}
+          </a>
+          <p class="snippet">{{ servico.descricao }}</p>
+        </div>
+        {% endfor %}
+      </div>
+
+      {% else %}
+      <div id="resultsList" class="results" aria-live="polite">
+        Nenhum resultado encontrado.
+      </div>
+      {% endif %}
+
+    </div>
+  </main>
+
+  <script src="../static/script.js"></script>
+</body>
+
+</html>

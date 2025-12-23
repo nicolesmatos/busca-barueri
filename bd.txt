@@ -1,0 +1,217 @@
+create table servicos(
+	id_servico int unsigned unique primary key auto_increment not null,
+	eixo varchar(250) not null,
+    nome_servico varchar(250) not null,
+    descricao varchar(500) not null,
+    quem_utiliza varchar(250) not null,
+    categoria varchar(250) ,
+    horario_atendimento varchar(250),
+    local_atendimento varchar(300),
+    informacoes_adicionais varchar(250),
+    tipo_atendimento varchar(250),
+    link_acesso varchar(250),
+    passo_a_passo varchar(250),
+    prazo_entrega varchar(250),
+    requisitos varchar(250),
+    permite_agendamento varchar(250),
+    valor varchar(250)
+    
+
+);
+
+INSERT INTO servicos (
+    eixo, nome_servico, descricao, quem_utiliza, categoria, horario_atendimento, 
+    local_atendimento, informacoes_adicionais, tipo_atendimento, link_acesso, 
+    passo_a_passo, prazo_entrega, requisitos, permite_agendamento, valor
+) VALUES
+-- Serviço 1
+('Direitos e Documentação',
+ 'Emitir Certificado da Pessoa com Deficiência',
+ 'Documento oficial que comprova a deficiência para acesso a benefícios e políticas públicas.',
+ 'Pessoas com deficiência reconhecida em avaliação oficial.',
+ 'Certidões e Documentos',
+ '24h online',
+ 'Portal Gov.br',
+ 'Necessário login Gov.br',
+ 'Digital',
+ 'https://www.gov.br/pt-br/servicos/emitir-certificado-da-pessoa-com-deficiencia',
+ 'Acessar Gov.br > Fazer login > Solicitar emissão',
+ 'Imediato após validação',
+ 'Laudo médico ou benefício ativo',
+ 'Sim',
+ 'Gratuito'),
+
+-- Serviço 2
+('Educação Inclusiva',
+ 'Matrícula Escolar Inclusiva',
+ 'Garantia de matrícula em escolas públicas e privadas com recursos de acessibilidade.',
+ 'Estudantes com deficiência e responsáveis.',
+ 'Educação',
+ 'Horário escolar',
+ 'Instituições de ensino',
+ 'Direito previsto na LBI',
+ 'Presencial',
+ 'https://www.gov.br/pt-br/temas/acesso-a-educacao-para-pessoas-com-deficiencia',
+ 'Solicitar matrícula > Informar necessidades > Escola providencia recursos',
+ 'De acordo com calendário escolar',
+ 'Documentação escolar e comprovação da deficiência',
+ 'Sim',
+ 'Gratuito'),
+
+-- Serviço 3
+('Trabalho e Inclusão',
+ 'Programa de Inclusão no Mercado de Trabalho',
+ 'Apoio à contratação de pessoas com deficiência e cumprimento da Lei de Cotas.',
+ 'Empresas e pessoas com deficiência em busca de emprego.',
+ 'Trabalho e Emprego',
+ 'Horário comercial',
+ 'Secretarias de Trabalho e plataformas digitais',
+ 'Lei de Cotas (Lei nº 8.213/91)',
+ 'Presencial e digital',
+ 'http://www.pessoacomdeficiencia.gov.br/',
+ 'Cadastro > Intermediação > Contratação',
+ 'Variável conforme processo seletivo',
+ 'Laudo médico e cadastro em programas',
+ 'Sim',
+ 'Gratuito'),
+
+-- Serviço 4
+('Mobilidade e Transporte',
+ 'Passe Livre Interestadual',
+ 'Benefício que garante transporte gratuito em viagens interestaduais de ônibus, trem ou barco.',
+ 'Pessoas com deficiência de baixa renda.',
+ 'Transporte',
+ 'Horário comercial',
+ 'Rodoviárias e empresas de transporte',
+ 'Emitido pelo Ministério da Infraestrutura',
+ 'Presencial e digital',
+ 'https://www.gov.br/pt-br/servicos/solicitar-passe-livre-interestadual',
+ 'Preencher formulário > Anexar documentos > Solicitar emissão',
+ 'Até 30 dias',
+ 'Comprovação de deficiência e renda familiar até 1 salário mínimo',
+ 'Sim',
+ 'Gratuito'),
+
+-- Serviço 5
+('Assistência Social',
+ 'Benefício de Prestação Continuada (BPC)',
+ 'Garantia de 1 salário mínimo mensal para pessoas com deficiência em situação de vulnerabilidade.',
+ 'Pessoas com deficiência e idosos de baixa renda.',
+ 'Assistência Social',
+ '24h online e presencial',
+ 'INSS e Meu INSS',
+ 'Previsto na LOAS',
+ 'Presencial e digital',
+ 'https://www.gov.br/inss/pt-br/assuntos/beneficios/beneficio-de-prestacao-continuada-bpc',
+ 'Solicitar via Meu INSS > Anexar documentos > Aguardar análise',
+ 'Até 90 dias',
+ 'Comprovação de deficiência e renda familiar per capita inferior a 1/4 do salário mínimo',
+ 'Sim',
+ 'Gratuito');
+ 
+ -- novas inserções
+ 
+ INSERT INTO servicos (
+    eixo, nome_servico, descricao, quem_utiliza, categoria,
+    horario_atendimento, local_atendimento, informacoes_adicionais,
+    tipo_atendimento, link_acesso, passo_a_passo, prazo_entrega,
+    requisitos, permite_agendamento, valor
+) VALUES
+-- 1
+('Cidadão', 'Porta de Entrada',
+ 'Setor responsável pela escuta qualificada e acolhimento da pessoa com deficiência, com equipe de Serviço Social, para encaminhamentos internos, rede de apoio e/ou agendamentos.',
+ 'Pessoa com deficiência e familiares', 'Direitos da Pessoa com Deficiência',
+ NULL, NULL, NULL, NULL, NULL,
+ 'Comparecer à SDPD com laudo médico da deficiência e documentos pessoais para acolhimento e encaminhamento.',
+ NULL, 'Laudo médico da deficiência e documentos pessoais', NULL, NULL),
+
+-- 2
+('Cidadão', 'Tecnologia Assistiva',
+ 'Acesso a equipamentos de tecnologia assistiva (órteses, próteses, meios de locomoção, cadeiras de rodas, aparelhos auditivos) e suporte técnico, incluindo Oficina Ortopédica para pequenos reparos.',
+ 'Pessoa com deficiência', 'Direitos da Pessoa com Deficiência',
+ NULL, NULL, NULL, NULL, NULL,
+ NULL, NULL, NULL, NULL, NULL),
+
+-- 3
+('Cidadão', 'Centro-dia',
+ 'Serviço que promove convivência e interação de pessoas com deficiência acima de 18 anos por meio de oficinas culturais, lazer em grupo e passeios inclusivos.',
+ 'Pessoa com deficiência (acima de 18 anos)', 'Direitos da Pessoa com Deficiência',
+ NULL, NULL, NULL, NULL, NULL,
+ NULL, NULL, NULL, NULL, NULL),
+
+-- 4
+('Cidadão', 'Programa incluir (Apoio e Emprego)',
+ 'Programa para inclusão e permanência da pessoa com deficiência no mercado de trabalho, com apoio técnico à empresa, ao candidato e à família do período de pré-contratação à pós-contratação.',
+ 'Pessoa com deficiência e empresas', 'Direitos da Pessoa com Deficiência',
+ NULL, NULL, NULL, NULL, NULL,
+ NULL, NULL, NULL, NULL, NULL),
+
+-- 5
+('Cidadão', 'Prevenção e serviço especializado em deficiência visual',
+ 'Serviço especializado para pessoas com deficiência visual, com Estimulação Visual Precoce e Orientação e Mobilidade; campanhas anuais intersecretariais de prevenção visual (Além do Olhar) e auditiva (Caminhos do Som).',
+ 'Pessoa com deficiência visual ou auditiva', 'Direitos da Pessoa com Deficiência',
+ NULL, NULL, NULL, NULL, NULL,
+ NULL, NULL, NULL, NULL, NULL),
+
+-- 6
+('Cidadão', 'Esporte e Superação',
+ 'Incentivo ao esporte inclusivo, com divulgação e participação em modalidades como Voleibol Sentado e Bocha Paralímpica, visando bem-estar, autoestima e autossuperação.',
+ 'Pessoa com Deficiência', 'Direitos da Pessoa com Deficiência',
+ NULL, NULL, NULL, NULL, NULL,
+ NULL, NULL, NULL, NULL, NULL),
+
+-- 7 (NOVO)
+('Cidadão', 'Comunicação e Eventos',
+ 'Setor que articula ações intersetoriais para dar visibilidade a iniciativas voltadas à pessoa com deficiência, fomenta eventos inclusivos e gerencia o banco de dados da secretaria.',
+ 'Pessoa com deficiência e comunidade em geral', 'Direitos da Pessoa com Deficiência',
+ NULL, NULL, NULL, NULL, NULL,
+ NULL, NULL, NULL, NULL, NULL),
+
+-- 8
+('Cidadão', 'Acessibilidade',
+ 'Ações e projetos contínuos para ampliar acesso e circulação de pessoas com deficiência em vias, espaços e prédios públicos, equipamentos e transporte público.',
+ 'Pessoa com deficiência e comunidade', 'Direitos da Pessoa Com Deficiência',
+ NULL, NULL, NULL, NULL, NULL,
+ NULL, NULL, NULL, NULL, NULL),
+
+-- 9
+('Cidadão', 'LIBRAS (Oficinas e ComLIBRAS)',
+ 'Oferta de Oficinas de LIBRAS à comunidade e serviço ComLIBRAS para interpretação remota via QR Code e videochamada entre munícipes surdos e ouvintes.',
+ 'Pessoa com deficiência auditiva e comunidade', 'Direitos da Pessoa Com Deficiência',
+ NULL, NULL, 'A interpretação ocorre por central remota de LIBRAS acessada por aplicativo via QR Code.',
+ NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+
+-- 10
+('Cidadão', 'Transporte e Isenção tarifária',
+ 'Isenção tarifária do transporte coletivo adaptado para munícipes com deficiência, conforme legislação municipal e normativas específicas.',
+ 'Pessoa com deficiência', 'Direitos da Pessoa com Deficiência',
+ NULL, NULL, NULL, NULL, NULL,
+ NULL, NULL, NULL, NULL, NULL),
+
+-- 11
+('Cidadão', 'Carteira de Identificação da Pessoa com Deficiência',
+ 'Emissão de carteira municipal para garantir atendimento prioritário à pessoa com deficiência, conforme legislação municipal.',
+ 'Pessoa com deficiência', 'Direitos da Pessoa com Deficiência',
+ NULL, NULL, NULL, NULL, NULL,
+ NULL, NULL, NULL, NULL, NULL),
+
+-- 12
+('Cidadão', 'Programa de Apoio à Pessoa com Deficiência',
+ 'Apoio domiciliar para pessoas com deficiência com quadros graves e complexos, mediante avaliação técnica, para viabilizar acesso aos serviços municipais.',
+ 'Pessoa com deficiência em quadro grave ou complexo', 'Direitos da Pessoa com Deficiência',
+ NULL, NULL, NULL, NULL, NULL,
+ NULL, 'Avaliação técnica conforme critérios do programa', NULL, NULL, NULL),
+
+-- 13
+('Cidadão', 'Equoterapia',
+ 'Serviço de reabilitação que utiliza o cavalo como instrumento terapêutico no Centro Municipal de Equoterapia, para pessoas com deficiência a partir de 2 anos.',
+ 'Pessoa com deficiência (a partir de 2 anos)', 'Direitos da Pessoa com Deficiência',
+ NULL, NULL, 'Realizado no Centro Municipal de Equoterapia (sede própria).',
+ NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+
+-- 14
+('Cidadão', 'Consultoria técnica',
+ 'Apresentação técnica dos serviços institucionais da SDPD a equipamentos municipais, ONGs, empresas e instituições de ensino para promover visibilidade e inclusão.',
+ 'Equipamentos municipais, ONGs, empresas e instituições de ensino', 'Direitos da Pessoa Com Deficiência',
+ NULL, NULL, NULL, NULL, NULL,
+ NULL, NULL, NULL, NULL, NULL);

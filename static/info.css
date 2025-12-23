@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+section {
+    /* padding: 2% 2%;
+    margin:6% 0; */
+    margin: 0 auto;
+    /* margin: 6% 0; */
+    width: 95%;
+    font-family: 'Inter';
+}
+
+
+
+.nav-mobile.inferior-nav{
+    margin-top: 90%;
+}
+
+
+.logo-barueri {
+    text-align: center;
+    margin-top: 10%;
+}
+
+img {
+    width: 50%;
+}
+
+.nav-mobile-topo {
+    display: none;
+}
+
+.lado-direito-desk {
+    display: none;
+}
+
+h1,
+h2 {
+
+    color: #2DAAE1;
+    margin-top: 3vh;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/**Informações do topo da página*/
+.bloco-1 {
+    text-align: center;
+}
+
+/* Informações de mesma linha (presencial + agendamento) */
+.info-1 {
+    display: flex;
+    /* justify-content: center; */
+    /* margin-left: 5%; */
+}
+
+/* Texto que acompanha os ícones- cor diferenciada */
+.text-icon {
+    padding: 1.66%;
+    color: #666666;
+} 
+
+
+/*Ícones */
+.fa-solid,
+.fa-calendar {
+    color: #2DAAE1;
+
+}
+
+p {
+    color: #666666;
+    font-size: 1.55vh;
+}
+
+.acesso-servico {
+    display: flex;
+    align-items: center;
+    margin: 10%;
+
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.5vh;
+    border-radius: 24px;
+    width: 100%;
+    cursor: pointer;
+    background-color: #2DAAE1;
+    border: none;
+}
+
+a {
+    color: white;
+    font-family: 'Inter';
+    padding: 2%;
+
+}
+
+/*Ícone do link*/
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    color: white;
+}
+
+
+
+
+.bloco-3 {
+    display: flex;
+    margin: 0;
+    gap: 5%;
+}
+
+.barra-icon {
+    color: #1F1F1F;
+
+}
+
+.bloco-2{
+    margin-bottom: 3vh;
+}
+
+.nav-mobile {
+    display: flex;
+    justify-content: center;
+    margin: 10%;
+    gap: 50%;
+    cursor: pointer;
+    margin-top: 30%;
+}
+
+
+/* RESPONSIVIDADE EM TABLETS */
+
+@media(min-width: 760px) {
+
+
+    h1 {
+        font-size: 40px;
+
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    a {
+        font-size: 1.8vh;
+    }
+    
+
+}
+
+/* RESPONSIVIDADE EM COMPUTADORES */
+
+@media(min-width: 1020px) {
+    section {
+        /* margin: 0; */
+
+
+    }
+
+    .pai {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1vh;
+        padding: 0;
+        position: relative;
+    }
+
+    .barra {
+        display: flex;
+        justify-content: flex-start;
+        border: solid 0;
+        border-radius: 0 0 30px 30px;
+        padding-top: 2vh;
+        background: linear-gradient(to right, #A6C832 0%, #2DAAE1 20%, #F28900 50%, #F193BE 80%, #FECF0D 100%);
+    }
+
+    .logo-barueri {
+        margin-top: 0;
+    }
+
+    .info-oculta-desk {
+        display: none;
+    }
+
+    .botao-adicionar-desk{
+        display: none;
+    }
+
+    .nav-mobile-topo {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 5vh;
+
+    }
+
+    .lado-esquerdo-desk {
+        display: block;
+        flex: 1;
+    }
+
+    .lado-esquerdo-desk,
+    .lado-direito-desk {
+        display: block;
+        flex: 1;
+        padding: 3vh;
+    }
+
+    /* Adicionando a linha imaginária entre os dois containers */
+
+    .pai::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(60%);
+        width: 1px;
+        background: #ccc;
+
+    }
+
+
+    h1,
+    h2 {
+        text-align: left;
+        font-size: 4vh;
+    }
+
+
+
+    p {
+        text-align: left;
+        font-size: 2vh;
+    }
+
+
+   
+        .info-1 {
+        justify-content: left;
+        /* background-color: aliceblue; */
+        border-radius: 20PX;
+        margin-bottom: 2vh;
+        margin-left: 0;
+    }
+
+
+
+    .text-icon {
+        color: #666666;
+        padding-right: 1vh;
+        padding: 0 1vh 0 1vh;
+    }
+
+    .acesso-servico {
+        display: flex;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 6%;
+    }
+
+    button {
+
+
+        align-items: center;
+        /* justify-content: left; */
+        height: 3rem;
+        border-radius: 24px;
+        width: 100%;
+        cursor: pointer;
+        background-color: #2DAAE1;
+        border: none;
+    }
+
+    a {
+        font-size: 2.5vh;
+    }
+
+    .bloco-3 {
+        display: flex;
+        margin: 0;
+        gap: 5%;
+    }
+
+
+
+
+
+
+}

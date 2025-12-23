@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Busca Barueri</title>
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+
+  <!-- CSS específico da página inicial -->
+  <link rel="stylesheet" href="../static/style-index.css" />
+</head>
+<body class="page-index">
+  <header class="top-header top-header-centered">
+    <div class="logo-wrap">
+      <img src="../static/img/logo_site (1).png" alt="Barueri" class="brand-logo">
+    </div>
+    <p class="slogan">Você busca, Barueri te mostra!</p>
+  </header>
+
+  <main class="center-wrap">
+    <form id="searchForm" class="search-form centered" role="search" onsubmit="return false;">
+      <span class="material-icons-outlined search-icon">search</span>
+
+      <!-- input type=search (nativo) -->
+      <input id="busca" class="search-input" type="search" placeholder="Digite algo para buscar..." autocomplete="off" aria-label="Busca" />
+
+     <!-- Excluí o botão de limpar -->
+
+      <!-- botão buscar -->
+      <button id="buscarBtn" class="icon-btn search-btn" type="submit" title="Buscar" aria-label="Buscar">
+        <span class="material-icons-outlined">subdirectory_arrow_left</span>
+      </button>
+
+      <div id="sugestoes" class="suggestions" role="listbox" aria-label="Sugestões"></div>
+    </form>
+  </main>
+
+  <script src="../static/script.js"></script>
+</body>
+</html>
