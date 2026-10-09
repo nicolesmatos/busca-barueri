@@ -1,30 +1,30 @@
-# 📌 Guia de Execução do Projeto
+# 🔍 Busca-Barueri
 
-Este repositório contém as instruções necessárias para configurar e rodar a aplicação localmente ou via **GitHub Codespaces**.
+O **Busca-Barueri** é uma plataforma centralizada que otimiza o acesso aos serviços oferecidos pela **Secretaria dos Direitos da Pessoa com Deficiência (SDPD)**. Atuando como um motor de busca intuitivo e eficiente, a solução facilita a consulta e a navegação pelas informações e serviços prestados pela secretaria.
+
+O projeto foi desenvolvido no âmbito das atividades prestadas para a **Secretaria de Inovação e Tecnologia (CIT - Barueri)** durante o programa de estágio em 2025.
 
 ---
 
 ## 🚀 Como Executar o Projeto
 
-Você pode rodar este projeto localmente clonando o repositório ou abrindo-o diretamente através do **Code Space**.
+Você pode rodar este projeto localmente clonando o repositório ou executando-o através do **GitHub Codespaces**.
 
 ### 1. Instalação das Dependências
 
-Abra o terminal na raiz do projeto e execute o comando abaixo para instalar as dependências necessárias (incluindo Flask, MySQL driver e dotenv):
+Abra o terminal na raiz do projeto e execute o comando abaixo para instalar os pacotes necessários (como Flask, drivers de conexão com o MySQL e `python-dotenv`):
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-### 2. Configuração do Ambiente (.env)
+### 2. Configuração das Variáveis de Ambiente (`.env`)
 
 Na raiz do projeto, crie um arquivo chamado `.env`.
 
-> ⚠️ **Atenção:** Este arquivo contém credenciais sensíveis e de acesso ao banco de dados, por isso não é enviado para o GitHub. É necessária a sua criação manual sempre que for executar o projeto em um novo ambiente.
+> ⚠️ **Atenção:** Este arquivo armazena credenciais sensíveis e parâmetros de conexão com o banco de dados. Por motivos de segurança, ele é mantido no `.gitignore` e não deve ser commitado no GitHub. É necessário criá-lo manualmente ao configurar o ambiente.
 
-Adicione as configurações e acessos do seu banco de dados dentro do arquivo `.env`:
+Adicione as credenciais de acesso ao banco de dados no arquivo `.env`:
 
 ```env
 DB_HOST=seu_host
@@ -33,16 +33,14 @@ DB_PASSWORD=sua_senha
 DB_NAME=nome_do_banco
 ```
 
-* **Banco de Dados:** Os acessos podem ser substituídos caso um novo banco de dados precise ser utilizado. O script de criação do banco e as inserções de dados realizadas constam no arquivo `BD.TXT`.
+* 🗄️ **Banco de Dados:** As credenciais podem ser ajustadas conforme a necessidade do ambiente. O script SQL de criação de tabelas e as inserções iniciais necessárias para o funcionamento do projeto constam no arquivo `BD.TXT`.
 
----
+### 3. Execução da Aplicação
 
-### 3. Executando a Aplicação
-
-Com o ambiente configurado e as dependências instaladas, execute a aplicação no terminal:
+Com as dependências instaladas e as variáveis de ambiente configuradas, inicie a aplicação executando:
 
 ```bash
 python app.py
 ```
 
-Após o comando ser executado, acesse o link com a porta criada que será exibido no terminal (ex: `http://127.0.0.1:5000`).
+Após a inicialização do servidor, acesse a URL disponibilizada no terminal (por padrão: `http://127.0.0.1:5000`) para visualizar e interagir com a plataforma no navegador.
